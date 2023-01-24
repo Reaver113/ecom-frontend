@@ -86,6 +86,7 @@ function ProductList() {
 				rate: 5,
 				count: 300,
 			},
+			stock: 10,
 		},
 		{
 			id: 7,
