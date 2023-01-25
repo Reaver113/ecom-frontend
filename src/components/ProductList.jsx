@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 import Product from "./Product"
+import ProductClass from "./ProductClass"
 import Title from "./styled/Title"
 import GridBox from "./styled/GridBox"
 
@@ -136,7 +137,7 @@ function ProductList() {
 			{
 				items.map((item) => {
 					return (
-						<Product key={item.id} productInfo={item} />
+						<ProductClass key={item.id} productInfo={item} />
 					)
 				})
 			}

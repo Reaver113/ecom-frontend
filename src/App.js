@@ -2,16 +2,22 @@ import { useState } from "react"
 import CircularProgress from "@mui/material/CircularProgress"
 import Box from "@mui/material/Box"
 
-import {ProductList} from "./components/ProductList"
+import ProductInfo from "./components/ProductInfo"
+import ProductListClass from "./components/ProductListClass"
 import Cart from "./components/Cart"
 import NavBar from "./components/mui/NavBar"
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
+  const [selectedItem, setSelectedItem] = useState(null)
+
+  function setItem(item) {
+    setSelectedItem(item)
+  }
 
   setTimeout(() => {
     setIsLoading(false)
-  }, 2000)
+  }, 1000)
 
   return (
     <>
@@ -23,7 +29,8 @@ function App() {
         ):(       
         <div className="App">
         <NavBar />
-        <ProductList />
+        <ProductListClass setItem={setItem}/>
+        <ProductInfo item= {selectedItem} />
         <Cart />
       </div>
       )}
