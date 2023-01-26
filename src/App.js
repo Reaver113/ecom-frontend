@@ -3,9 +3,11 @@ import CircularProgress from "@mui/material/CircularProgress"
 import Box from "@mui/material/Box"
 
 import ProductInfo from "./components/ProductInfo"
-import ProductListClass from "./components/ProductListClass"
+import ProductList from "./components/ProductList"
 import Cart from "./components/Cart"
 import NavBar from "./components/mui/NavBar"
+import AddProduct from "./components/AddProduct"
+import Login from "./components/Login"
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -29,8 +31,10 @@ function App() {
         ):(       
         <div className="App">
         <NavBar />
-        <ProductListClass setItem={setItem}/>
+        <Login />
+        <ProductList setItem={setItem}/>
         <ProductInfo item= {selectedItem} />
+        <AddProduct />
         <Cart />
       </div>
       )}
