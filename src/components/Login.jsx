@@ -1,6 +1,6 @@
 import Title from "./styled/Title";
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, local } from "react";
 import axios from "axios";
 
 const InputWrapper = styled.div`
@@ -55,6 +55,7 @@ function Login() {
 			.then((res) => res.data)
 			.then((json) => {
 				setUserFetched(true)
+				local.Storage.setItem("token", json.token)
 				console.log(json)
 			})
 			.catch(() => {
